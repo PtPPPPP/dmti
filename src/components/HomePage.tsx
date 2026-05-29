@@ -1,8 +1,10 @@
+import React from 'react'
+
 interface HomePageProps {
   onStart: () => void
 }
 
-export default function HomePage({ onStart }: HomePageProps) {
+const HomePage = React.memo(function HomePage({ onStart }: HomePageProps) {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-4 py-12 relative">
       <div className="relative z-10 max-w-2xl mx-auto text-center">
@@ -19,10 +21,10 @@ export default function HomePage({ onStart }: HomePageProps) {
           className="font-display text-4xl md:text-6xl lg:text-7xl font-black tracking-tight mb-4 animate-slide-up"
           style={{ textShadow: '0 0 40px rgba(212, 175, 55, 0.3)' }}
         >
-          <span className="text-white">测测你是哪一项</span>
+          <span className="text-white">测测你的竞技气质</span>
           <br />
-          <span className="bg-gradient-to-r from-dlt-gold via-dlt-goldLight to-dlt-cyan bg-clip-text text-transparent">
-            田径项目人格
+          <span className="bg-gradient-to-r from-dlt-gold via-dlt-goldLight to-dlt-purple bg-clip-text text-transparent">
+            最接近哪位田径巨星
           </span>
         </h1>
 
@@ -31,7 +33,7 @@ export default function HomePage({ onStart }: HomePageProps) {
           不是测你跑得快不快
         </p>
         <p className="text-base md:text-lg text-white/40 font-light mb-3 animate-fade-in">
-          是测你的性格最像钻石联赛里的哪个田径项目。
+          是测你的性格和哪位钻石联赛运动员的竞技气质最接近。
         </p>
 
         {/* Keywords */}
@@ -64,7 +66,7 @@ export default function HomePage({ onStart }: HomePageProps) {
           </span>
           <span className="flex items-center gap-1.5">
             <span className="w-1 h-1 rounded-full bg-dlt-cyan" />
-            12 个项目
+            12 位巨星
           </span>
           <span className="flex items-center gap-1.5">
             <span className="w-1 h-1 rounded-full bg-dlt-green" />
@@ -86,4 +88,6 @@ export default function HomePage({ onStart }: HomePageProps) {
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dlt-gold/20 to-transparent" />
     </div>
   )
-}
+})
+
+export default HomePage

@@ -1,9 +1,11 @@
+import React from 'react'
+
 interface ProgressBarProps {
   current: number
   total: number
 }
 
-export default function ProgressBar({ current, total }: ProgressBarProps) {
+const ProgressBar = React.memo(function ProgressBar({ current, total }: ProgressBarProps) {
   const percent = Math.round((current / total) * 100)
 
   return (
@@ -58,4 +60,6 @@ export default function ProgressBar({ current, total }: ProgressBarProps) {
       </div>
     </div>
   )
-}
+})
+
+export default ProgressBar

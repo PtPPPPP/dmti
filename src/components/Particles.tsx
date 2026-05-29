@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 interface Particle {
   id: number
@@ -10,7 +10,7 @@ interface Particle {
   opacity: number
 }
 
-export default function Particles() {
+const Particles = React.memo(function Particles() {
   const [particles, setParticles] = useState<Particle[]>([])
 
   useEffect(() => {
@@ -108,4 +108,6 @@ export default function Particles() {
       />
     </div>
   )
-}
+})
+
+export default Particles
